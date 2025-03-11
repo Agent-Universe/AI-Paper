@@ -7,7 +7,7 @@ from PIL import Image
 import fitz
 from openai import OpenAI
 import time
-from config import API_KEY, BASE_URL
+from config import API_KEY, BASE_URL, MODEL_NAME
 
 client = OpenAI(
     api_key=API_KEY,
@@ -26,10 +26,10 @@ def askLLM(message, retries=10, delay=8):
     for attempt in range(retries):
         try:
             response = client.chat.completions.create(
-                model="moonshot-v1-32k",
+                model=MODEL_NAME,
                 temperature=0.7,
                 max_tokens=2000,
-                messages=message,
+                messages=message
             )
             # 检查response是否包含所需的数据
             if response.choices and response.choices[0].message.content:

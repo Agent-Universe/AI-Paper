@@ -3,7 +3,7 @@ from jinja2 import Environment, FileSystemLoader
 import json
 from openai import OpenAI
 import time
-from config import API_KEY, BASE_URL
+from config import API_KEY, BASE_URL, MODEL_NAME
 
 client = OpenAI(
     api_key=API_KEY,
@@ -22,7 +22,7 @@ def askLLM(message, retries=10, delay=8):
     for attempt in range(retries):
         try:
             response = client.chat.completions.create(
-                model="moonshot-v1-128k",
+                model=MODEL_NAME,
                 temperature=0.7,
                 max_tokens=2000,
                 messages=message,
