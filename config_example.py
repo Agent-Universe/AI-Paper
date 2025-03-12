@@ -2,3 +2,4 @@
 API_KEY = "你的api key"
 BASE_URL = "转接地址，通常Kimi和Deepseek都有一个转接地址，第三方的OpenAI key也会有一个转接地址"
 MODEL_NAME = "模型名称 或 模型ID，e.g. qwen-max-2025-01-25"
+DAY = "天数，如果是周报，则为 7，如果是日报，则为 1，可自定义配置"

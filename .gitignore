@@ -4,3 +4,13 @@
 config.py
 /top_half_images/
 /.idea
+/__pycache__/
+
+#生成的过程文件也忽略
+total_papers.json
+unique_data.json
+articles_summary.json
+etxtracted_data.json
+papers.json
+output.html
+

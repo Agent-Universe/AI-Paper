@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime, timedelta
+from config import DAY
 
 # 获取今天的日期
 today = datetime.now().date()
@@ -10,7 +11,7 @@ today = datetime.now().date()
 all_papers_data = []
 
 # 循环从七天前到今天
-for i in range(7):
+for i in range(DAY):
     # 计算日期
     date = (today - timedelta(days=i)).strftime('%Y-%m-%d')
 
